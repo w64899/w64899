@@ -1,0 +1,34 @@
+$primary-base: #160C28;
+$primary-base-light: #381f66;
+$primary-base-lighter: #532e99;
+$secondary-base: #998243;
+$secondary-base-light: #f0cc69;
+$secondary-base-lighter: #ffd970;
+$neutral-white: #E1EFE6;
+$neutral-gray: #AEB7B3;
+$neutral-black: #000411;
+
+$spacing-8: 8px;
+$spacing-16: 16px;
+$spacing-24: 24px;
+$spacing-32: 32px;
+$spacing-40: 40px;
+$spacing-48: 48px;
+$spacing-56: 56px;
+$spacing-64: 64px;
+$spacing-72: 72px;
+$spacing-96: 96px;
+
+@media screen and (max-width: 768px) {
+  $spacing-8: 4px;
+  $spacing-16: 8px;
+  $spacing-24: 12px;
+  $spacing-32: 16px;
+  $spacing-40: 20px;
+  $spacing-48: 24px;
+  $spacing-56: 28px;
+  $spacing-64: 32px;
+  $spacing-72: 48px;
+  $spacing-96: 56px;
+}
+

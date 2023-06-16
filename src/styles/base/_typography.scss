@@ -1,0 +1,178 @@
+@import "../abstract/mixins";
+
+h1,
+.title--h1 {
+  @include get-font-style("h1");
+  letter-spacing: -0.02em;
+}
+
+// Title 2
+h2,
+.title--h2 {
+  @include get-font-style("h2");
+  letter-spacing: -0.02em;
+}
+
+// Title 3
+h3,
+.title--h3 {
+  @include get-font-style("h3");
+  letter-spacing: -0.02em;
+}
+
+// Title 4
+h4,
+.title--h4 {
+  @include get-font-style("h4");
+  letter-spacing: -0.02em;
+}
+
+// Title 5
+h5,
+.title--h5 {
+  @include get-font-style("h5");
+  letter-spacing: -0.02em;
+}
+
+// Title 6
+h6,
+.title--h6 {
+  @include get-font-style("h6");
+  letter-spacing: normal;
+}
+
+// Body Large
+body,
+.font-p-lrg {
+  @include get-font-style("p-lrg");
+  letter-spacing: normal;
+}
+
+// Body Large Bold
+.font-p-lrg--b {
+  @include get-font-style("p-lrg--b");
+  letter-spacing: normal;
+}
+
+// Body Medium
+.font-p {
+  @include get-font-style("p");
+  letter-spacing: normal;
+}
+
+// Body Medium DemiBold
+.font-p--b {
+  @include get-font-style("p--b");
+  letter-spacing: normal;
+}
+
+// Body Small
+.font-small {
+  @include get-font-style("small");
+  letter-spacing: normal;
+}
+
+// Body Small DemiBold
+.font-small--b {
+  @include get-font-style("small--b");
+  letter-spacing: normal;
+}
+
+// Tagline Compact
+.font-tag {
+  @include get-font-style("tag");
+  text-transform: uppercase;
+  letter-spacing: normal;
+}
+
+// Tagline Compact Bold
+.font-tag--b {
+  @include get-font-style("tag--b");
+  text-transform: uppercase;
+  letter-spacing: normal;
+}
+
+// Tagline Compact Small
+.font-tag-small {
+  @include get-font-style("tag-small");
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.font-caveats {
+  @include get-font-style("caveats");
+  letter-spacing: normal;
+}
+
+// Stats
+.font-stats {
+  @include get-font-style("stats");
+  letter-spacing: -0.02em;
+}
+
+// Stats Large
+.font-stats-lrg {
+  @include get-font-style("stats-lrg");
+  letter-spacing: -0.02em;
+}
+
+// Stats Small
+.font-stats-small {
+  @include get-font-style("stats-small");
+  letter-spacing: -0.02em;
+}
+
+// Button Large
+.font-button-lrg {
+  @include get-font-style("button-lrg");
+  letter-spacing: normal;
+}
+
+// Button
+.font-button {
+  @include get-font-style("button");
+  letter-spacing: normal;
+}
+
+// Button Small
+.font-button-small {
+  @include get-font-style("button-small");
+  letter-spacing: normal;
+}
+
+:is(p,.gg-footer) a:not(.social-icon-link):hover {
+  text-decoration: underline;
+}
+
+// Link (Underlined)
+a,
+.font-link {
+  @include get-font-style("link");
+  text-decoration: none;
+  letter-spacing: normal;
+}
+
+.font-link-underline {
+  @include get-font-style("link-underline");
+  text-decoration: underline;
+}
+
+// Breadcrumbs
+.font-breadcrumbs {
+  @include get-font-style("breadcrumbs");
+  letter-spacing: normal;
+}
+
+// Input Text
+input,
+.font-input {
+  @include get-font-style("input");
+  letter-spacing: normal;
+}
+
+// Input Caption
+label,
+.font-input-caption {
+  @include get-font-style("input-caption");
+  letter-spacing: normal;
+}
