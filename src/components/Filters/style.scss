@@ -1,0 +1,14 @@
+@import "../../styles/base/base";
+
+.filter {
+  &__rating-wrapper {
+    display: flex;
+    gap: $spacing-24;
+    margin-bottom: $spacing-24;
+
+    > div {
+      display: flex;
+      gap: $spacing-8;
+    }
+  }
+}
