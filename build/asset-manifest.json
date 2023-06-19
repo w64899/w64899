@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9e22baa7.css",
+    "main.js": "/static/js/main.fec57f10.js",
+    "static/js/787.1236fd91.chunk.js": "/static/js/787.1236fd91.chunk.js",
+    "static/media/banner-2.jpg": "/static/media/banner-2.9a5bda6f905f9ea48358.jpg",
+    "static/media/banner-1.jpg": "/static/media/banner-1.2881b94bfa6b60edf2dd.jpg",
+    "static/media/commingsoon.jpg": "/static/media/commingsoon.aded2bbcd0a0603c21c0.jpg",
+    "static/media/banner-3.jpg": "/static/media/banner-3.f6cf9e9174b781d7359d.jpg",
+    "static/media/men.jpg": "/static/media/men.7a2c0b2fa745357fde44.jpg",
+    "static/media/loginform.jpg": "/static/media/loginform.efc9c17b91bbfb2906cf.jpg",
+    "static/media/women.jpg": "/static/media/women.3433df30b58c76995203.jpg",
+    "static/media/magazine.jpg": "/static/media/magazine.cf9681c3bff4b7bbce07.jpg",
+    "static/media/logo-white.png": "/static/media/logo-white.dcb90cdc93d6c545e7ea.png",
+    "static/media/roboto-bold-webfont.woff": "/static/media/roboto-bold-webfont.286d33f321aa5faa0aa9.woff",
+    "static/media/roboto-regular-webfont.woff": "/static/media/roboto-regular-webfont.a46a4d39d1b5b306ab59.woff",
+    "static/media/roboto-light-webfont.woff": "/static/media/roboto-light-webfont.c0f0377f954f0cc97ca1.woff",
+    "static/media/roboto-bold-webfont.woff2": "/static/media/roboto-bold-webfont.9ce6c529a6eb03d8271e.woff2",
+    "static/media/roboto-regular-webfont.woff2": "/static/media/roboto-regular-webfont.44d60ee7660d6bfad51c.woff2",
+    "static/media/roboto-light-webfont.woff2": "/static/media/roboto-light-webfont.9281784c0864eb5a4a0c.woff2",
+    "static/media/logo-black.png": "/static/media/logo-black.7811e8897996444414b2.png",
+    "static/media/logo-color.png": "/static/media/logo-color.79bc9bef564eb9eb542a.png",
+    "static/media/logo-no-background.png": "/static/media/logo-no-background.336bf6a1e2eca87664b6.png",
+    "index.html": "/index.html",
+    "main.9e22baa7.css.map": "/static/css/main.9e22baa7.css.map",
+    "main.fec57f10.js.map": "/static/js/main.fec57f10.js.map",
+    "787.1236fd91.chunk.js.map": "/static/js/787.1236fd91.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e22baa7.css",
+    "static/js/main.fec57f10.js"
+  ]
+}
