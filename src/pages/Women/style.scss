@@ -1,0 +1,37 @@
+@import "../../styles/base/base";
+
+.product-section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  h1 {
+    margin-bottom: $spacing-24!important;
+  }
+
+  .products-inner-wrapper {
+    display: grid;
+    gap: $spacing-40;
+    grid-template-columns: repeat(3, 300px);
+    place-content: center;
+
+    .item {
+      max-width: 300px;
+    }
+  }
+
+  .filters {
+    margin-bottom: $spacing-24;
+
+    &__button {
+      padding: 14px 40px;
+      border: none;
+      border-radius: 40px;
+      background-color: $primary-base;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-base-light;
+      }
+    }
+  }
+}
