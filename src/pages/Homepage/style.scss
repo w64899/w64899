@@ -1,0 +1,21 @@
+@import "../../styles/base/base";
+
+main {
+  overflow: hidden;
+
+  .magazine-wrapper {
+    background-color: $neutral-gray-light;
+
+    > div {
+      padding: $spacing-24 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      gap: $spacing-24;
+
+      @media (max-width: 768px) {
+        padding: $spacing-24 $spacing-24;
+        flex-direction: column;
+      }
+    }
+  }
+}
