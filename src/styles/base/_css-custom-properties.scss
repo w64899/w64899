@@ -1,11 +1,13 @@
-$primary-base: #160C28;
-$primary-base-light: #381f66;
-$primary-base-lighter: #532e99;
+$primary-base: #0a74ff;
+$primary-base-light: #66a3ff;
+$primary-base-lighter: #99c2ff;
+$accent: #cdb3ff;
 $secondary-base: #998243;
 $secondary-base-light: #f0cc69;
 $secondary-base-lighter: #ffd970;
-$neutral-white: #E1EFE6;
+$neutral-white: #ffffff;
 $neutral-gray: #AEB7B3;
+$neutral-gray-light: #e6ecec;
 $neutral-black: #000411;
 
 $spacing-8: 8px;
@@ -32,3 +34,6 @@ $spacing-96: 96px;
   $spacing-96: 56px;
 }
 
+$header-height-default: 85px;
+$header-height-mobile: 75px;
+$aux-height: 37px;

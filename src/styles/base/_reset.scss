@@ -27,6 +27,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   background-color: #f0f0f0;
@@ -42,17 +46,21 @@ a,
 span {
   word-break: break-word;
 }
-
-p {
-  color: $neutral-black;
+p,
+ul,
+ol,
+:is(h1, h2, h3, h4, h5, h6) {
+  &:not(:last-child) {
+    margin-bottom: $reset-p-margin;
+  }
 }
 
 p,
 ul,
 ol,
 :is(h1, h2, h3, h4, h5, h6) {
-  &:not(:last-child, [class*='spacing--']) {
-    margin-bottom: $reset-p-margin;
+  &:not([class*='color']) {
+    color: $neutral-black;
   }
 }
 

@@ -1,0 +1,96 @@
+.block-button {
+  display: flex;
+  border-radius: 40px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  width: fit-content;
+
+  @extend .font-button;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
+    color: inherit;
+    background-color: transparent;
+    text-decoration: none;
+    width: max-content;
+  }
+
+  &:is(.button-v1 ,.button-v6) {
+    background-color: $primary-base;
+    color: $neutral-white;
+
+    &:hover {
+      background-color: $primary-base-light;
+    }
+  }
+
+  &:is(.button-v2, .button-v5) {
+    background-color: $neutral-white;
+    color: $secondary-base;
+
+    .block-button__link {
+      padding: 0;
+    }
+
+    &:hover {
+      color: $secondary-base-light;
+    }
+  }
+
+  &:is(.button-v1, .button-v2, .button-v3, .button-v4, .button-v7) .block-button__link::after {
+    margin-left: 14px;
+    color: inherit;
+    font-weight: 400;
+  }
+
+  &:is(.button-v3, .button-v4, .button-v7) {
+    background-color: transparent;
+
+    .block-button__link {
+      padding: 0;
+    }
+
+    &:hover {
+      color: $primary-base;
+    }
+  }
+
+  &:is(.button-v4):hover {
+    color: $secondary-base;
+  }
+
+  &:is(.button-v6) {
+    color: $secondary-base;
+    background-color: $neutral-white;
+
+    &:hover {
+      color: $secondary-base-light;
+      background-color: $neutral-white;
+    }
+  }
+
+  &:is(.button-v7) {
+    color: $primary-base;
+
+    &:hover {
+      color: $primary-base-light;
+    }
+  }
+
+  &:is(.button-v5 , .button-v6) .block-button__link::after {
+    margin-left: 14px;
+    color: inherit;
+  }
+
+  &.disabled {
+    &:is(.button-v1, .button-v2, .button-v5) {
+      background-color: $neutral-gray;
+      color: $neutral-black;
+    }
+
+    &:is(.button-v3, .button-v4, .button-v7) {
+      color: $neutral-black;
+    }
+  }
+}
