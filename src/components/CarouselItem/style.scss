@@ -1,0 +1,64 @@
+@import "../../styles/base/base";
+
+.box {
+  height: 100%;
+  position: relative;
+  padding-bottom: $spacing-96;
+
+  @media screen and (max-width: 768px) {
+    max-width: 320px;
+  }
+
+  > img {
+    aspect-ratio: 76/47;
+    object-fit: contain;
+  }
+
+  &__price {
+    gap: var(--space-xs);
+
+    img {
+      height: 36px;
+      width: 36px;
+    }
+  }
+
+  &__category {
+    padding: $spacing-8 $spacing-16;
+    color: $neutral-white;
+    border-radius: 4px;
+    display: block;
+    width: fit-content;
+
+    &[class^="box__category spacing--xs font-tag--b men"] {
+      background-color: $primary-base-light;
+    }
+
+    &[class^="box__category spacing--xs font-tag--b women"] {
+      background-color: $secondary-base-light;
+    }
+
+    &.jewelery {
+      background-color: #cc13cc;
+    }
+
+    &.electronics {
+      background-color: #14ff14;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0 0;
+    height: 100%;
+  }
+
+  > div > img {
+    border-radius: 8px;
+  }
+
+  .block-button {
+    margin-top: auto;
+  }
+}
