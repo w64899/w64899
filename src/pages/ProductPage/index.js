@@ -46,7 +46,7 @@ const ProductPage = ()=>{
                     <p className="product__rating font-p-lrg--b">Ratings</p>
                     <div className="product__rating-wrapper">
                         <p className="rate font-caveats">{product.rating?.rate}</p>
-                        {isLogged && <p className="rate" onClick={()=>dispatch({type:"FAV",payload:product})}>{product.rating?.count}<i className="fa-solid fa-heart" style={fav.includes(product) ? likedStyleLike : likedStyleNonLike}></i></p>}
+                        {isLogged && <p className="rate" onClick={()=>dispatch({type:"FAV",payload:product})}>{product.rating?.count}</p>}
                     </div>
                     <p className="product__description font-p-lrg--b">Description</p>
                     <div className="product__description font-caveats">
