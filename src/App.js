@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProductPage from "./pages/ProductPage";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/men" element={<Men />} />
         <Route path="/women" element={<Women />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/accessories" element={<Accessories />} />
         <Route path="/electronics" element={<Electronics />} />
         <Route path="/login" element={<Login />} />
