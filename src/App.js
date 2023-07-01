@@ -9,8 +9,24 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProductPage from "./pages/ProductPage";
 import Cart from "./pages/Cart";
+import AdminPage from "./pages/AdminPage";
+import React from "react";
+import {onAuthStateChanged} from "firebase/auth";
+import {auth} from "./db/firebase";
+import Footer from "./components/Footer/Footer";
 
 function App() {
+  const [firebaseLoggedUser, setFirebaseLoggedUser] = React.useState({});
+
+  React.useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if(user) {
+        const {email} = user
+        setFirebaseLoggedUser(email);
+      }
+    });
+  }, []);
+
   return (
     <div className="App">
       <Navigation/>
@@ -21,10 +37,12 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/accessories" element={<Accessories />} />
         <Route path="/electronics" element={<Electronics />} />
+        {firebaseLoggedUser === 'admin@si.pl' && <Route path="/admin" element={<AdminPage />} />}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/product/:productID" element={<ProductPage />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

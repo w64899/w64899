@@ -1,0 +1,47 @@
+@import "../../styles/base/base";
+
+.gg-footer {
+  position: relative;
+  height: 300px;
+  padding: $spacing-64 0;
+
+  &__wrapper {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      padding: 0 $spacing-24;
+    }
+  }
+
+  &__menu {
+    gap: 0 $spacing-32;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      padding: 0 $spacing-24;
+    }
+  }
+
+
+  &__menu-links {
+    margin-right: auto;
+    gap: $spacing-24;
+
+    .gg-footer__link {
+      color: $neutral-white;
+    }
+
+    ul {
+      list-style: none;
+      gap: $spacing-16;
+      align-items: center;
+
+      @media (min-width: 768px) {
+        gap: $spacing-32;
+      }
+    }
+  }
+}

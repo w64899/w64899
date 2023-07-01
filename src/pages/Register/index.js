@@ -2,7 +2,9 @@ import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import loginImage from '../../assets/images/loginform.jpg'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../db/firebase';
+import {auth, db} from '../../db/firebase';
+import {nanoid} from "nanoid";
+import { doc, setDoc } from 'firebase/firestore'
 import './style.scss';
 
 export default ()=> {
@@ -11,6 +13,12 @@ export default ()=> {
     const [repeatedPassword, setRepeatedPassword] = React.useState('');
     const register = async (e) => {
         e.preventDefault();
+
+        await setDoc(doc(db, "users", nanoid()), {
+            email: email,
+            password: password
+        })
+
         try {
             if (validation.correct && email.includes('@')) {
                 await createUserWithEmailAndPassword(
