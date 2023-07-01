@@ -4,14 +4,36 @@ import naviScript from "./src/main-navigation";
 import externalScripts from "./src/index";
 import Button from "../Button/Button";
 import { Link } from 'react-router-dom'
-import logo from '../../assets/images/logo-no-background.png';
+import logo from '../../assets/images/logo-no-background.png'
+import {getAuth, signOut, onAuthStateChanged} from 'firebase/auth';
+import { auth } from '../../db/firebase';
 import {useSelector} from "react-redux";
 
 export default () => {
+    const [firebaseLoggedUser, setFirebaseLoggedUser] = React.useState({});
+
+    React.useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if(user) {
+                const {email} = user
+                setFirebaseLoggedUser(email);
+            }
+        });
+    }, []);
+
+
+    const authorisation = getAuth();
+
+    const logout = ()=>{
+        signOut(authorisation).then(() => {
+            window.location.reload()
+        }).catch((error) => {
+            console.error(error)
+        });
+    }
+
 
     const cart = useSelector((state)=>state.cart)
-    const isLogged = useSelector((state)=>state.logged)
-    const user = useSelector((state)=>state.login)
 
     useEffect(()=>{
         externalScripts();
@@ -32,16 +54,12 @@ export default () => {
                                             <nav className="block-navigation__wrapper" data-menu-orientation="horizontal"
                                                  aria-label="Aux menu">
                                                 <ul className='flex-center-vertical color-primary-base-light'>
+                                                    {firebaseLoggedUser.length > 0 ? <button className='font-button color-secondary-base-light' onClick={logout}>Logout {firebaseLoggedUser}</button> :
+                                                        <a className="block-navigation__item-content flex-center-vertical font-button-small" target="blank" href="/login">
+                                                            <span className="block-navigation__item-label color-secondary-base-light">Login</span>
+                                                        </a>
+                                                    }
                                                     <li className="block-navigation__item block-navigation__item--mega-menu">
-                                                        {!isLogged ?
-                                                            <a className="block-navigation__item-content flex-center-vertical font-button-small"
-                                                               target="blank" href="/login">
-                                                                <span
-                                                                    className="block-navigation__item-label">Login</span>
-                                                            </a> :
-                                                            <span
-                                                                className="block-navigation__item-label">Hello {user.log}</span>
-                                                        }
                                                     </li>
                                                 </ul>
                                             </nav>

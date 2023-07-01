@@ -1,32 +1,38 @@
 import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import loginImage from '../../assets/images/loginform.jpg'
-import {useDispatch, useSelector} from "react-redux";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../db/firebase';
 import './style.scss';
 
 export default ()=> {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [repeatedPassword, setRepeatedPassword] = React.useState('');
+    const register = async (e) => {
+        e.preventDefault();
+        try {
+            if (validation.correct && email.includes('@')) {
+                await createUserWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
 
-    const [registered, setRegistered] = React.useState(false)
-    const [account,setAccount] = React.useState({})
-
-    const createAccount =(e)=>{
-        e.preventDefault()
-        dispatch({type:'CREATE', payload: account})
-        setRegistered(true)
-        navigate('/login')
-    }
+                navigate('/');
+            }
+        } catch (err) {
+            console.log(err.message);
+        }
+    };
 
     const navigate = useNavigate()
-    const dispatch = useDispatch()
 
     const validation = {
         borderBottomColor: '#AEB7B3FF',
         correct: undefined
     };
-    if (password.length > 0 && repeatedPassword.length > 0) {
+    if (password.length > 5 && repeatedPassword.length > 5) {
         if (password === repeatedPassword) {
             validation.borderBottomColor = 'green';
             validation.correct = true;
@@ -52,7 +58,6 @@ export default ()=> {
                             value={email}
                             onChange={(e) => {
                                 setEmail(e.target.value)
-                                setAccount({...account, log: e.target.value})
                             }}
                             placeholder="Email"
                         ></input>
@@ -64,7 +69,6 @@ export default ()=> {
                             value={password}
                             onChange={(e) => {
                                 setPassword(e.target.value)
-                                setAccount({...account, pass: e.target.value})
                             }}
                             placeholder="Password"
                             style={validation}
@@ -81,7 +85,7 @@ export default ()=> {
                         ></input>
                     </div>
                     <button
-                        onClick={createAccount}
+                        onClick={register}
                         className="register-page-wrapper__form-button font-button"
                     >
                         Register

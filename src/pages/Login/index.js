@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo-no-background.png'
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../db/firebase';
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import './style.scss';
@@ -9,19 +11,16 @@ export default ()=> {
     const [password, setPassword] = React.useState('');
 
     const navigate = useNavigate()
-
-    const account = useSelector((state)=>state.login)
-
-    const dispatch = useDispatch()
-
-    const validate = (e)=>{
-        e.preventDefault()
-        if(email===account.log && password===account.pass){
-            dispatch({type:'SIGN_UP', payload: true})
-            navigate('/')
+    const signIn = async (e) => {
+        e.preventDefault();
+        try {
+            const user = await signInWithEmailAndPassword(auth, email, password);
+            if (user) navigate('/');
+        } catch (err) {
+            console.log(err.message);
+            alert("Login or password incorrect")
         }
-        else alert("Login or password incorrect")
-    }
+    };
 
     return (
         <main className='login-page'>
@@ -57,7 +56,7 @@ export default ()=> {
                         ></input>
                     </div>
                     <button
-                        onClick={validate}
+                        onClick={signIn}
                         className="login-page-wrapper__form-button font-button"
                     >
                         Login
