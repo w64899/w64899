@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Carousel from "../Homepage/Sections/Carousel/Carousel";
 import './style.scss'
+import {onAuthStateChanged} from "firebase/auth";
+import {auth} from "../../db/firebase";
 
 const ProductPage = ()=>{
     const [product, setProduct] = React.useState([])
@@ -10,8 +12,18 @@ const ProductPage = ()=>{
     const location = useLocation()
     const dispatch = useDispatch()
     const idOfProductToDetails = location.state
-    const fav = useSelector((state)=>state.favs)
-    const isLogged = useSelector((state)=> state.logged)
+
+    const [firebaseLoggedUser, setFirebaseLoggedUser] = React.useState({});
+
+    React.useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if(user) {
+                const {email} = user
+                setFirebaseLoggedUser(email);
+            }
+        });
+    }, []);
+
 
     const likedStyleLike={
         color:"rgb(214, 33, 33)"
@@ -46,7 +58,7 @@ const ProductPage = ()=>{
                     <p className="product__rating font-p-lrg--b">Ratings</p>
                     <div className="product__rating-wrapper">
                         <p className="rate font-caveats">{product.rating?.rate}</p>
-                        {isLogged && <p className="rate" onClick={()=>dispatch({type:"FAV",payload:product})}>{product.rating?.count}</p>}
+                        {firebaseLoggedUser.length > 0 && <p className="favourite" onClick={()=>dispatch({type:"FAV",payload:product})}>Add to favourite</p>}
                     </div>
                     <p className="product__description font-p-lrg--b">Description</p>
                     <div className="product__description font-caveats">

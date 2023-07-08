@@ -14,6 +14,7 @@ import React from "react";
 import {onAuthStateChanged} from "firebase/auth";
 import {auth} from "./db/firebase";
 import Footer from "./components/Footer/Footer";
+import FavouriteProducts from "./pages/FavouriteProducts";
 
 function App() {
   const [firebaseLoggedUser, setFirebaseLoggedUser] = React.useState({});
@@ -38,6 +39,7 @@ function App() {
         <Route path="/accessories" element={<Accessories />} />
         <Route path="/electronics" element={<Electronics />} />
         {firebaseLoggedUser === 'admin@si.pl' && <Route path="/admin" element={<AdminPage />} />}
+        {firebaseLoggedUser && <Route path="/favourite" element={<FavouriteProducts />} />}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/product/:productID" element={<ProductPage />} />

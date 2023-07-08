@@ -34,6 +34,7 @@ export default () => {
 
 
     const cart = useSelector((state)=>state.cart)
+    const fav = useSelector((state)=>state.fav)
 
     useEffect(()=>{
         externalScripts();
@@ -54,6 +55,9 @@ export default () => {
                                             <nav className="block-navigation__wrapper" data-menu-orientation="horizontal"
                                                  aria-label="Aux menu">
                                                 <ul className='flex-center-vertical color-primary-base-light'>
+                                                    {firebaseLoggedUser.length > 0 && <a className="block-navigation__item-content flex-center-vertical font-button-small" target="blank" href="/favourite">
+                                                        <span className="block-navigation__item-label color-secondary-base-light">Favourite products ({fav.length})</span>
+                                                    </a>}
                                                     {firebaseLoggedUser.length > 0 ? <button className='font-button color-secondary-base-light' onClick={logout}>Logout {firebaseLoggedUser}</button> :
                                                         <a className="block-navigation__item-content flex-center-vertical font-button-small" target="blank" href="/login">
                                                             <span className="block-navigation__item-label color-secondary-base-light">Login</span>

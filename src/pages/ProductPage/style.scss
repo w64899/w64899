@@ -44,6 +44,20 @@
       p:is([class*='font-caveats']) {
         margin-bottom: $spacing-16;
       }
+
+      .favourite {
+        transition: background-color 0.3s ease-in-out;
+        background-color: $secondary-base-light;
+        cursor: pointer;
+        color: $neutral-white;
+        padding: $spacing-8 $spacing-24;
+        border-radius: 20px;
+        width: fit-content;
+
+        &:hover {
+          background-color: $secondary-base;
+        }
+      }
     }
 
     &__description {

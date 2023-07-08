@@ -5,6 +5,7 @@ import { combineReducers } from "redux";
 import storage from 'redux-persist/lib/storage';
 import {persistReducer} from "redux-persist";
 import {configureStore} from "@reduxjs/toolkit";
+import Favourite from "./favouriteReducer";
 
 const persistConfig = {
     key: "root",
@@ -15,7 +16,8 @@ const persistConfig = {
 const allReducers = combineReducers({
     login: LoginReducer,
     logged: LoggedReducer,
-    cart: Cart
+    cart: Cart,
+    fav: Favourite,
 })
 
 const persistedReducer = persistReducer(persistConfig, allReducers);
